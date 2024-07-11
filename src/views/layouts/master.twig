@@ -120,8 +120,27 @@
         window.header_is_sticky = "{{theme.settings.get('header_is_sticky', 'Default Value')}}"
         window.imageZoom = "{{theme.settings.get('imageZoom')}}"
     </script>
-    
-    {% hook 'head:start' %}
+{#{% hook 'head:start' %}#}
+<script data-cfasync="false">
+  window.salla = window.Salla = window.Salla || {};
+  Salla.onReady =
+  	Salla.onReady ||
+  	function (callback) {
+  		return new Promise(function (resolve) {
+  			return Salla.status == "ready"
+  				? resolve(callback ? callback(salla.config.all()) : salla.config.all())
+  				: window.addEventListener(
+  						"twilight::initiated",
+  						function (config) {
+  							resolve(callback ? callback(config.detail) : config.detail);
+  						},
+  						{ once: true },
+  					);
+  		});
+  	};
+</script>
+
+<script async src="https://cdn.salla.network/js/twilight/tests/featureSTORE-1611-enhanced-review-system/f669489cf17e715631b2288a546b89de86d81e73/twilight.js"></script>
     {% hook head %}
     {% block styles %}{% endblock %}
     <link rel="stylesheet" href="{{ 'app.css' | asset }}">
