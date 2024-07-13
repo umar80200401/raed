@@ -28,6 +28,17 @@
         {
             "type": "boolean",
             "icon": "sicon-toggle-off",
+            "label": "Theme background color",
+            "description": "",
+            "id": "background_color_thm",
+            "format": "switch",
+            "required": false,
+            "value": false,
+            "selected": false
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
             "label": "وضع عمودي للمنتجات في مربع المنتجات الثابتة في الصفحة الرئيسية",
             "description": "",
             "id": "vertical_fixed_products",
