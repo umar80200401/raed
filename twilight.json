@@ -25,18 +25,7 @@
         "filters"
     ],
     "settings": [
-        {
-            "type": "boolean",
-            "icon": "sicon-toggle-off",
-            "label": "Theme background color",
-            "description": "",
-            "id": "testing",
-            "format": "text",
-            "required": false,
-            "value": false,
-            "selected": false
-        },
-        {
+            {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "Theme background color",
